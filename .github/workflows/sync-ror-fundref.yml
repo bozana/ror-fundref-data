@@ -19,11 +19,6 @@ jobs:
       cancel-in-progress: true
 
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Install dependencies
         run: pip install requests
 
@@ -31,7 +26,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python - <<'EOF'
+          python3 - <<'EOF'
           import io
           import os
           import re
